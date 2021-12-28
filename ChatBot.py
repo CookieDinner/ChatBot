@@ -39,9 +39,8 @@ def check_all(message):
 
     # Tutaj wrzucamy odpowiedzi ----------------------------------------------------------------------------------------
 
-    answer('Cześć.', ['czesc', 'halo', 'witam'])
 
-    answer('Dzień dobry.', ['dzien', 'dobry'], required=['dzien', 'dobry'])
+    answer('Dzień dobry.', ['czesc', 'halo', 'witam', 'dzien', 'dobry', 'hej','dzien', 'dobry'])
 
     answer('Do widzenia.', ['pa', 'do', 'widzenia', 'na', 'razie'])
 
@@ -59,9 +58,19 @@ def check_all(message):
 
     # Koniec odpowiedzi ------------------------------------------------------------------------------------------------
 
+
+
+
     matched = max(highest_probability_list, key=highest_probability_list.get)
 
-    return 'Przepraszam, ale nie rozumiem co masz na myśli...' if highest_probability_list[matched] < 10 else matched
+    greeting = ""
+    if matched != "Dzień dobry.":
+        for word in message:
+            if word in ['czesc', 'halo', 'witam','dzien', 'dobry', 'hej']:
+                greeting = "Dzień dobry. "
+                break
+
+    return 'Przepraszam, ale nie rozumiem co masz na myśli...' if highest_probability_list[matched] < 10 else greeting+matched
 
 
 def get_answer(message):
