@@ -76,7 +76,7 @@ def check_all(message):
     answer('Do zobaczenia!', ['pa', 'do', 'widzenia', 'na', 'razie'])
 
     answer('Restauracja jest czynna w godzinach 8:00 - 20:00.',
-           ['w', 'jakich', 'godzinach', 'restauracja', 'otwarta', 'o', 'ktorej', 'czynna'])
+           ['w', 'jakich', 'godzinach', 'restauracja', 'otwarta', 'ktorej', 'czynna'])
 
     answer('Restauracja jest czynna od Poniedziałku do Piątku.',
            ['kiedy', 'otwarta', 'restauracja', 'w', 'jakich', 'dniach', 'tygodnia'])
@@ -130,7 +130,7 @@ def check_all(message):
         words = pizza[1].replace(',', '').split(' ')
         answer(f'Co powiesz na pizzę {pizza[0]}? Składniki: {pizza[1]}',
                words + ['jakie', 'czy', 'macie', 'są', 'szukam', 'z', 'czym', 'składniki', 'zawiera'],
-               required=[['z'], ['zawiera']])
+               required=[['z']])
 
 
     # Koniec odpowiedzi ------------------------------------------------------------------------------------------------
